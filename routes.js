@@ -1,3 +1,8 @@
+/*
+  This file specifies all routes for the app
+  This file is used on both server and client
+*/
+
 import AppComponent from './components/app';
 import IndexComponent from './components/index';
 import AboutComponent from './components/about';
@@ -15,4 +20,4 @@ const routes = {
     }]
 };
 
-export { routes };
+export {routes};

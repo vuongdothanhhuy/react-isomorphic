@@ -1,3 +1,6 @@
+// This file configs Webpack.
+// Must use ES5 because it is not translated by Babel
+
 var path = require('path');
 module.exports = {
   entry: path.join(process.cwd(), 'client-render.js'),

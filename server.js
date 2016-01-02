@@ -1,32 +1,22 @@
+// This is our web server
+// Using NodeJS with ExpressJS
+
+// This is modules for basic web server
 import express from 'express';
 import http from 'http';
 
+// This is for React and the magic isomorphic rendering
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RoutingContext } from 'react-router';
-
-// import AppComponent from './components/app';
-// import IndexComponent from './components/index';
 import { routes } from './routes';
 
+// Now create a basic web server and tell it to serve files
 const app = express();
-// const routes = {
-//     path: '',
-//     component: AppComponent,
-//     childRoutes: [{
-//         path: '/',
-//         component: IndexComponent
-//     }]
-// };
-
 app.use(express.static('public'));
-
 app.set('view engine', 'ejs');
 
-// app.get('*', (req, res) => {
-//     res.render('index');
-// });
-
+// Now setup routing system that enable isomorphic rendering.
 app.get('*', (req, res) => {
   // routes is our object of React routes defined above
   match({ routes, location: req.url }, (err, redirectLocation, props) => {
@@ -52,6 +42,7 @@ app.get('*', (req, res) => {
   });
 });
 
+// Get our server online and listen to requests
 const server = http.createServer(app);
 
 server.listen(3003);
