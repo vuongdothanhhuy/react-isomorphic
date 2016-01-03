@@ -10,7 +10,6 @@ import ReactDOM from 'react-dom';
 
 // Also need the React Router and info about routes from server
 import {Router} from 'react-router';
-
 import {routes} from './routes';
 
 // And need this to use HTML5 style URL (without the ugly #)

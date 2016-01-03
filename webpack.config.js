@@ -1,5 +1,5 @@
 // This file configs Webpack.
-// Must use ES5 because it is not translated by Babel
+// Must use ES5 because it is not translated by Babel.
 
 var path = require('path');
 module.exports = {
